@@ -28,7 +28,7 @@ class Homepage extends StatelessWidget {
                 animationDuration: Duration(milliseconds: 1500),
               );
               */
-              Get.defaultDialog(
+               /*Get.defaultDialog(
                 title: "Delete Alert",
                 titlePadding: EdgeInsets.all(10),
                 titleStyle: TextStyle(color: Colors.black),
@@ -53,8 +53,28 @@ class Homepage extends StatelessWidget {
                     Text("Task 2"),
                   ],
                 )
-              );
 
+              );
+          */
+              Get.bottomSheet(
+                Container(
+                  height: 200,
+                  width: 440,
+                  color: Colors.green,
+                  child: Column(
+                    children: [
+                      Text("Shanto"),
+                      Text("Shanto"),
+                      Text("Shanto"),
+                      Text("Shanto"),
+                      ElevatedButton(onPressed: (){Get.back(closeOverlays: true);},
+                          child: Text("close")),
+                    ],
+                  ),
+                ),
+                enableDrag: false,
+                isDismissible: false,
+              );
             },
             child: Text("Click me")),
       ),
