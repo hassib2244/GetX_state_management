@@ -12,8 +12,9 @@ class Homepage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
             onPressed: (){
+              //GetX SnacBar
 
-              Get.snackbar("Hi!", "Hello GetX",
+             /* Get.snackbar("Hi!", "Hello GetX",
               snackPosition: SnackPosition.BOTTOM,
               showProgressIndicator: true,
               backgroundColor: Colors.green,
@@ -25,11 +26,35 @@ class Homepage extends StatelessWidget {
                 isDismissible: false,
                 duration: Duration(seconds:5),
                 animationDuration: Duration(milliseconds: 1500),
-
-
-
-
               );
+              */
+              Get.defaultDialog(
+                title: "Delete Alert",
+                titlePadding: EdgeInsets.all(10),
+                titleStyle: TextStyle(color: Colors.black),
+
+                middleText: "Once delete, you can't get it back",
+                middleTextStyle: TextStyle(color: Colors.white),
+
+                backgroundColor: Colors.green,
+                radius: 4,
+                textConfirm: "Confirm",
+                textCancel: "Not Now",
+                cancelTextColor: Colors.white,
+                confirmTextColor: Colors.white,
+                onCancel: ()=>{Get.back(closeOverlays: true)},
+                onConfirm: ()=>{Get.back(closeOverlays: true)},
+                barrierDismissible: false,
+
+                content: Column(
+
+                  children: [
+                    Text("Task 1"),
+                    Text("Task 2"),
+                  ],
+                )
+              );
+
             },
             child: Text("Click me")),
       ),
