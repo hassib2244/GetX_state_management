@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key});
@@ -11,8 +12,8 @@ class ProductPage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
             onPressed: (){
+              Get.toNamed("/");
               //GetX SnacBar
-
               /* Get.snackbar("Hi!", "Hello GetX",
               snackPosition: SnackPosition.BOTTOM,
               showProgressIndicator: true,

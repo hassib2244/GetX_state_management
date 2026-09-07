@@ -13,12 +13,13 @@ class Homepage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
             onPressed: (){
-              Get.to(ProductPage());
+             Get.toNamed("/product");
+              //Get.to(ProductPage());
               // Get.off(ProductPage());
               //Get.offAll(ProductPage());
               //GetX SnacBar
 
-             /* Get.snackbar("Hi!", "Hello GetX",
+             /* Get.snackBar("Hi!", "Hello GetX",
               snackPosition: SnackPosition.BOTTOM,
               showProgressIndicator: true,
               backgroundColor: Colors.green,

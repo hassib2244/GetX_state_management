@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_state_management/HomePage.dart';
+import 'package:flutter_getx_state_management/ProductPage.dart';
 import 'package:get/get.dart';
+import 'HomePage.dart';
 
 main(){
   runApp(MyApp());
@@ -11,7 +13,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: Homepage(),
+
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: ()=>Homepage(),transition: Transition.zoom),
+        GetPage(name: '/product', page: ()=>ProductPage(),transition: Transition.zoom),
+
+      ],
+      //home: Homepage(),
     );
   }
 }
