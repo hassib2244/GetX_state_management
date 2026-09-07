@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_state_management/ProductPage.dart';
-import 'package:get/get.dart';
 
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+class ProductPage extends StatelessWidget {
+  const ProductPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page"),),
+        title: Text("Product Page"),),
       body: Center(
         child: ElevatedButton(
             onPressed: (){
-              Get.to(ProductPage());
-              // Get.off(ProductPage());
-              //Get.offAll(ProductPage());
               //GetX SnacBar
 
-             /* Get.snackbar("Hi!", "Hello GetX",
+              /* Get.snackbar("Hi!", "Hello GetX",
               snackPosition: SnackPosition.BOTTOM,
               showProgressIndicator: true,
               backgroundColor: Colors.green,
@@ -32,7 +27,7 @@ class Homepage extends StatelessWidget {
                 animationDuration: Duration(milliseconds: 1500),
               );
               */
-               /*Get.defaultDialog(
+              /*Get.defaultDialog(
                 title: "Delete Alert",
                 titlePadding: EdgeInsets.all(10),
                 titleStyle: TextStyle(color: Colors.black),
