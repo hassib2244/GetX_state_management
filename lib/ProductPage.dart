@@ -12,7 +12,7 @@ class ProductPage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
             onPressed: (){
-              Get.toNamed("/");
+              Get.offNamed("/");
               //GetX SnacBar
               /* Get.snackbar("Hi!", "Hello GetX",
               snackPosition: SnackPosition.BOTTOM,

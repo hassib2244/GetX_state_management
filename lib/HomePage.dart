@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_state_management/ProductPage.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -10,16 +11,17 @@ class Homepage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home Page"),),
-      body: Center(
-        child: ElevatedButton(
+      body: Column(
+        children: [
+          ElevatedButton(
             onPressed: (){
-             Get.toNamed("/product");
-              //Get.to(ProductPage());
-              // Get.off(ProductPage());
-              //Get.offAll(ProductPage());
-              //GetX SnacBar
-
-             /* Get.snackBar("Hi!", "Hello GetX",
+              GetStorage().write("Name", "Hassibul Hossain");
+              /*Get.offNamed("/product");
+               Get.to(ProductPage());
+               Get.off(ProductPage());
+               Get.offAll(ProductPage());
+               GetX SnacBar*/
+              /* Get.snackBar("Hi!", "Hello GetX",
               snackPosition: SnackPosition.BOTTOM,
               showProgressIndicator: true,
               backgroundColor: Colors.green,
@@ -33,7 +35,7 @@ class Homepage extends StatelessWidget {
                 animationDuration: Duration(milliseconds: 1500),
               );
               */
-               /*Get.defaultDialog(
+              /*Get.defaultDialog(
                 title: "Delete Alert",
                 titlePadding: EdgeInsets.all(10),
                 titleStyle: TextStyle(color: Colors.black),
@@ -83,7 +85,22 @@ class Homepage extends StatelessWidget {
               );
               */
             },
-            child: Text("Click me")),
+            child: Text("Write Data"),
+          ),
+          SizedBox(height: 100),
+          ElevatedButton(
+            onPressed: (){
+            var MyName= GetStorage().read("Name");
+              Get.snackbar(MyName, "This is My Name");
+            }, child: Text("Read Data"),
+          ),
+          SizedBox(height: 100),
+          ElevatedButton(
+            onPressed: (){
+              GetStorage().remove("Name");
+            }, child: Text("Data Erase"),
+          ),
+        ],
       ),
     );
   }
