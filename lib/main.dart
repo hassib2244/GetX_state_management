@@ -13,11 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-
+      debugShowCheckedModeBanner: false,
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: ()=>Homepage(),transition: Transition.zoom),
-        GetPage(name: '/product', page: ()=>ProductPage(),transition: Transition.zoom),
+        GetPage(name: '/', page: () => HomePage(), transition: Transition.zoom),
+        GetPage(name: '/product',
+            page: () => ProductPage(),
+            transition: Transition.zoom),
 
       ],
       //home: Homepage(),
